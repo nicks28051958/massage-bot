@@ -1,6 +1,6 @@
 import asyncio
 from sqlalchemy import select
-from MASSAGE_BOT.db import async_session
+from MASSAGE_BOT.db import async_session, init_db
 from MASSAGE_BOT.models import MassageType
 
 # Базовые виды массажа
@@ -36,4 +36,8 @@ async def seed():
         await session.commit()
 
 if __name__ == "__main__":
-    asyncio.run(seed())
+    async def main():
+        await init_db()
+        await seed()
+
+    asyncio.run(main())
