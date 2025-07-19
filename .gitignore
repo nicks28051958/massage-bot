@@ -19,6 +19,9 @@ __pycache__/
 # Файлы логов
 *.log
 
+# Игнорируем файл базы данных
+massage_bot.db
+
 # Системные файлы Windows
 Thumbs.db
 .DS_Store
